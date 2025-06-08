@@ -1,0 +1,134 @@
+{
+  "info": {
+    "name": "Quiz Application API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/user",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "user"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"postmantest@example.com\",\n  \"password\": \"pass123\",\n  \"firstname\": \"postmanTest\",\n  \"lastname\": \"User\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/user?userId=1",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "user"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update User Status",
+      "request": {
+        "method": "PATCH",
+        "url": {
+          "raw": "http://localhost:8080/user/1/status?activate=false",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "user",
+            "1",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "activate",
+              "value": "false"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/user",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "user"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get User by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/user?userId=1",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "user"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Quizzes by User ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/quiz?userId=1",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "quiz"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
